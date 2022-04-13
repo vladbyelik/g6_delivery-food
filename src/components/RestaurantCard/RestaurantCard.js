@@ -1,13 +1,20 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const RestaurantCard = (props) => {
 
-  const {name, image, stars, price, kitchen, time_of_delivery} = props;
+  const {name, image, stars, price, kitchen, products, time_of_delivery} = props;
 
   const img = require(`../../assets/${image}`);
 
+  let navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/restaurant/${products}`);
+  }
+
   return (
-    <a className="card card-restaurant">
+    <a className="card card-restaurant" onClick={handleClick}>
       <img src={img} alt="image" className="card-image"/>
       <div className="card-text">
         <div className="card-heading">

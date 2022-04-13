@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
 
@@ -12,9 +13,9 @@ const Footer = () => {
       <div className="container">
         <div className="footer-block">
           
-          <a href="/" className="logo footer-logo">
+          <Link to="/" className="logo footer-logo">
             <img src={logo} alt="logo" />
-          </a>
+          </Link>
 
           <nav className="footer-nav">
             <a href="#" className="footer-link">Ресторанам </a>
@@ -23,9 +24,9 @@ const Footer = () => {
             <a href="#" className="footer-link">Контакты</a>
           </nav>
           <div className="social-links">
-            <a href="#" className="social-link"><img src={instagram} alt="instagram"/></a>
-            <a href="#" className="social-link"><img src={facebook} alt="facebook"/></a>
-            <a href="#" className="social-link"><img src={vk} alt="vk"/></a>
+            <a href="#" target="_blank" className="social-link"><img src={instagram} alt="instagram"/></a>
+            <a href="#" target="_blank" className="social-link"><img src={facebook} alt="facebook"/></a>
+            <a href="#" target="_blank" className="social-link"><img src={vk} alt="vk"/></a>
           </div>
         </div>
       </div>

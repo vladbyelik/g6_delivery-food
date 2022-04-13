@@ -3,13 +3,13 @@ import 'firebase/auth';
 import 'firebase/database';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDsXeVWOV7TXO9dazRuIvYExUK8AKszjmQ",
-  authDomain: "g6-delivery-food.firebaseapp.com",
-  databaseURL: "https://g6-delivery-food-default-rtdb.firebaseio.com",
-  projectId: "g6-delivery-food",
-  storageBucket: "g6-delivery-food.appspot.com",
-  messagingSenderId: "842567534778",
-  appId: "1:842567534778:web:bf393f07f93cac6ac45a83"
+  apiKey: "AIzaSyC9R1kA4b5bXsvUH3M8xOshqi9DQjy42Bw",
+  authDomain: "deliveryg62.firebaseapp.com",
+  databaseURL: "https://deliveryg62-default-rtdb.firebaseio.com",
+  projectId: "deliveryg62",
+  storageBucket: "deliveryg62.appspot.com",
+  messagingSenderId: "143680312422",
+  appId: "1:143680312422:web:f8576ce8d84fb5e97a89a7"
 };
 
 firebase.initializeApp(firebaseConfig);

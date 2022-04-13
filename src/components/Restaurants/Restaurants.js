@@ -7,8 +7,6 @@ const Restaurants = () => {
 
   const restaurantsList = usePageData('partners');
 
-  console.log(restaurantsList);
-
   return (
     <section className="restaurants">
       <div className="restaurants__heading">
@@ -18,7 +16,6 @@ const Restaurants = () => {
         </label>
       </div>
       <div className="restaurants__cards cards">
-
         {restaurantsList 
           ? restaurantsList.length 
               ? restaurantsList.map(item => {
@@ -26,9 +23,6 @@ const Restaurants = () => {
                 })
               : <h3>(no items)</h3>
           : <Spinner />}
-
-        
-
       </div>
     </section>
   )
