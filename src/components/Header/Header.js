@@ -1,15 +1,29 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { logOut } from '../../redux-store/actions';
 import ModalAuth from '../ModalAuth/ModalAuth';
+import ModalCart from '../ModalCart/ModalCart';
 
-const Header = ({ login }) => {
+const Header = ({ login, dispatch }) => {
 
   const [isLoginModal, setIsLoginModal] = useState(false);
+  const [isBasketModal, setIsBasketModal] = useState(false);
+
+  let navigate = useNavigate();
 
   const handleLoginModal = () => {
     setIsLoginModal(!isLoginModal);
+  };
+
+  const handleBasketModal = () => {
+    setIsBasketModal(!isBasketModal);
   }
+
+  const handleLogOut = () => {
+    dispatch(logOut());
+    navigate(`/`);
+  };
 
   const logo = require('../../assets/img/icon/logo.svg').default;
 
@@ -36,12 +50,12 @@ const Header = ({ login }) => {
 
             {login && 
               <>
-                <button className="button button-cart" id="cart-button">
+                <button className="button button-cart" id="cart-button" onClick={handleBasketModal}>
                   <span className="button-cart-svg"></span>
                   <span className="button-text">Корзина</span>
                 </button>
 
-                <button className="button button-primary button-out">
+                <button className="button button-primary button-out" onClick={handleLogOut}>
                   <span className="button-text">Выйти</span>
                   <span className="button-out-svg"></span>
                 </button>
@@ -52,6 +66,7 @@ const Header = ({ login }) => {
       </div>
 
       {isLoginModal && <ModalAuth onClose={handleLoginModal}/>}
+      {isBasketModal && <ModalCart onClose={handleBasketModal} login={login}/>}
     </header>
   )
 }

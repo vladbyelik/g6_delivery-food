@@ -13,6 +13,10 @@ const reducer = (state = currState, action) => {
       localStorage.setItem(STORE_USER, JSON.stringify(action.payload))
       return state = action.payload;
     }
+    case 'LOG_OUT': {
+      localStorage.removeItem(STORE_USER)
+      return state = action.payload;
+    }
     default:
       return state;
   }

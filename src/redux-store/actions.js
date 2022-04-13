@@ -4,3 +4,16 @@ export const logIn = (loginData) => {
     payload: loginData
   }
 }
+
+export const logOut = () => {
+
+  const loginData = {
+    login: null,
+    password: null,
+  }
+
+  return {
+    type: 'LOG_IN',
+    payload: loginData
+  }
+}

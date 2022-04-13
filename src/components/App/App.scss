@@ -441,6 +441,14 @@ button {
     z-index: 999;
 }
 
+.modal-dialog {
+    position: fixed;
+    margin: auto;
+    inset: 0;
+    z-index: 9999;
+    height: fit-content;
+}
+
 .modal-auth {
   position: fixed;
   left: 0;
@@ -516,6 +524,7 @@ button {
 
 .modal-body {
     margin-bottom: 22px;
+    padding: 0;
 }
 
 .food-row {
